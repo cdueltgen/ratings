@@ -1,0 +1,20 @@
+from Flask import Session, g
+Flask session is a dictionary - session['user_id'] = u.id
+
+@app.before_request is code that gets run before every request
+def before_request():
+	if "user_id" in Session:
+		g.user = User.query.get(session['user_id'])
+	else:
+
+
+tutorial says you don't have to use g and before_session anymore - confusing
+
+also maybe change session in part1 to db_session to reduce confusion
+
+Turn on echo = True in development environment
+
+MVC = Model View Conroller
+
+render_template("index.html", user=g.user) user is the thing that is exposed to the user (i.e. Flask/Jinga)
+

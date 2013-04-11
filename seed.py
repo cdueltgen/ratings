@@ -9,7 +9,7 @@ def load_users(session):
     with open('seed_data/u.user', 'rb') as input_file:
         read_input = csv.reader(input_file, delimiter='|')
         for row in read_input:
-            user = model.User(id=row[0], email="email", password="password", age = row[1], zipcode = row[4])
+            user = model.User(id=row[0], age = row[1], zipcode = row[4], gender = row[2])
             session.add(user)
         session.commit()
 
